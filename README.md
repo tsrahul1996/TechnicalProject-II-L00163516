@@ -19,7 +19,7 @@ categories, place of origin, view count, like count, comment,
 description, etc. Our goal is to implement and evaluate models
 to predict views that indicate the popularity of video.
 
-##Data Loading and Preprocessing
+## Data Loading and Preprocessing
 
 In this project data loading and prepossessing phase is
 implemented on pandas data-frame. Exploratory data analysis
@@ -29,7 +29,11 @@ a high range are re-scaled using the log function to avoid
 numerical instability problems. The re-scaled view log is
 generated and set as a label column which in turn is used for
 prediction. The resulting pandas data-frame is used for data
-analytics. In the Modelling phase, the panda’s data frame is
+analytics.
+
+## Training and Modelling 
+
+In the Modelling phase, the panda’s data frame is
 split into train and test data-frame using train test split
 method in the sklearn library. Principal component analysis
 (PCA) is implemented to reduce the dimension of data-frame
