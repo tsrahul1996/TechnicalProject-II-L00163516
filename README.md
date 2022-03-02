@@ -12,3 +12,9 @@ two models from Scikit-learn which are,
 Also two models from MLlib which are, 
 - Gradient-Boosted Trees Regressor model
 - One Vs Rest model  
+
+we are going explore the YouTube dataset
+which contains details of videos and their features like
+categories, place of origin, view count, like count, comment,
+description, etc. Our goal is to implement and evaluate models
+to predict views that indicate the popularity of video.
