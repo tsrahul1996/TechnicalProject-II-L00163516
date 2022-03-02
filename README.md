@@ -132,6 +132,14 @@ obtained is 0.77 which is less than actual accuracy.
 ### Visualisation.
 
 ![Alt text](https://github.com/tsrahul1996/TechnicalProject-II-L00163516/blob/main/Fig2.PNG?raw=true "Title")
-![Alt text](https://github.com/tsrahul1996/TechnicalProject-II-L00163516/blob/main/fig 1.PNG?raw=true "Title")
+![Alt text](https://github.com/tsrahul1996/TechnicalProject-II-L00163516/blob/main/Fig1.PNG?raw=true "Title")
+
+The Regression models used in this project and their
+MSE value on the test data-set are depicted and
+BayesianRidge outperforms every other model. The crossvalidation
+of test errors is depicted, the base model
+of BayesianRidge and Gradient Boot regressor is compared
+by evaluating it 30 times. The base model of Gradient Boot
+regressor showed better results while evaluation.
 
 
