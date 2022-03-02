@@ -72,7 +72,7 @@ Gradient Boosting constructs an incremental model in a
 stage-wise manner; it is capable of optimizing any differentiable
 loss functions. Every stage involves fitting a regression
 tree to the provided loss function’s negative gradient
-[2]. It is an ensemble method and is imported
+. It is an ensemble method and is imported
 from sklearn.ensemble. The model is hyper tuned with
 GridSearchCV and PCA transformed data as train data.
 The parameters learning rate=0.03, max depth=2,
