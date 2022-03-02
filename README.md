@@ -1,5 +1,5 @@
-# TechnicalProject-L00163516-tsrahul1996-TechnicalProject-II-L00163516
-TechnicalProject-II-L00163516
+# Big Data Analytics using Machine Learning
+Rahul Thayyil Sivan
 
 we are going to use the topmost two machine learning
 libraries and perform predictive analysis using various models
