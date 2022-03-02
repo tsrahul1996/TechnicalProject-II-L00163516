@@ -131,4 +131,4 @@ obtained is 0.77 which is less than actual accuracy.
 
 ### Visualisation.
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Alt text](TechnicalProject-II-L00163516/Fig2.PNG?raw=true "Title")
