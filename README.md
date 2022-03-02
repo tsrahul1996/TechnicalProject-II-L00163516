@@ -42,7 +42,7 @@ consisted of 38 columns which can be reduced to 34 columns
 by implementing PCA. Our methodology is split into four subsections
 based on the two libraries used for ML.
 
-## BayesianRidge model
+### BayesianRidge model
 
 The model is imported from sklearn module using
 sklearn.linear model.BeyesianRidge commands
@@ -77,7 +77,57 @@ from sklearn.ensemble. The model is hyper tuned with
 GridSearchCV and PCA transformed data as train data.
 The parameters learning rate=0.03, max depth=2,
 n estimators=700,subsample=0.6 found to be the
-best estimator with the r square value of 0.85 , mse value
+best estimator with the r square value of 0.85 , mse value 
 of 0.47 and 0.45 for test and train data respectively.
+
+For the next two models, we are changing the dataframe
+to spark data-frame in order to utilize the power of
+distributed learning. Models and methods from MLlib are
+used for training, hyper-parameter tuning, and evaluation. In
+MLlib it is easier to combine multiple algorithms into a
+single pipeline. The features in data-frame are processed using
+VectorAssembler which is a transformer that merges the
+columns in a given list into a single vector field. A pipeline
+model with a single assembler is used to transform the dataframe
+and the label column which is the target variable is also
+used to generate the data-frame used for training.
+
+### Gradient-Boosted Trees Regressor model (GBT)
+
+A pipeline model is implemented with two stages,
+Vector Indexing and model fitting. In Vector Indexing, automatically
+identify categorical features, and index them in
+dataframe with a new column named indexedFeatures.
+The output of this column is passed as input of the GBT
+model which is the next stage of the pipeline where the training is done. Using RegressionEvaluator the model
+is evaluated and mse score on test data 0.67 is acquired.
+The score can be improved using hyperparameter tuning using
+CrossValidator from pyspark.ml.tuning library. A
+new ParamGrid is generated using ParamGridBuilder
+with list of values of maxDepth and maxIter as parameters.
+A two-stage pipeline for evaluation is implemented with
+featureIndexer and newly created crossValidator
+class as stages respectively. Mse score of 0.57 is acquired
+for the hyper tuned model which is a significant improvement
+from the base model.
+
+### OneVsRest model
+
+Since the view log label column is continuous it needs
+to be converted to perform classification. A new column
+label range is created with respect to range of view log
+(in this case range of 0 to 3, 4 to 6, 7 to 9 etc) using
+spark UDF function. This range column is set as the label
+and other features are combined to one single vector column
+using VectorIndexer transformer. In the model training
+stage, the data is split into train and test datasets using
+randomSplit function. The logistic Regression model has
+instantiated the base classifier and it is passed as a parameter
+of OneVsRest model. The model is trained and evaluated
+using MulticlassClassificationEvaluator.
+The accuracy obtained is 0.78. Using CrossValidator
+hyperparameter tuning is done with estimator as OneVsRest
+model and classifier as Logistic Regression. The accuracy
+obtained is 0.77 which is less than actual accuracy.
 
 
