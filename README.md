@@ -132,3 +132,6 @@ obtained is 0.77 which is less than actual accuracy.
 ### Visualisation.
 
 ![Alt text](https://github.com/tsrahul1996/TechnicalProject-II-L00163516/blob/main/Fig2.PNG?raw=true "Title")
+![Alt text](https://github.com/tsrahul1996/TechnicalProject-II-L00163516/blob/main/fig 1.PNG?raw=true "Title")
+
+
