@@ -39,8 +39,7 @@ method in the sklearn library. Principal component analysis
 (PCA) is implemented to reduce the dimension of data-frame
 by keeping relevant features. The prepossessed data-frame
 consisted of 38 columns which can be reduced to 34 columns
-by implementing PCA. Our methodology is split into four subsections
-based on the two libraries used for ML.
+by implementing PCA. Our four models are trained using the train data-frame in following manner.
 
 ### BayesianRidge model
 
@@ -130,4 +129,6 @@ hyperparameter tuning is done with estimator as OneVsRest
 model and classifier as Logistic Regression. The accuracy
 obtained is 0.77 which is less than actual accuracy.
 
+### Visualisation.
 
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
